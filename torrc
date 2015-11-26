@@ -5,15 +5,14 @@ DataDirectory /var/lib/tor
 SocksPort 0.0.0.0:9050
 
 ## Entry policies to allow/deny SOCKS requests based on IP address.
-## SocksPolicy accept 17217.0.0/16
+SocksPolicy accept 10.0.0.0/8
 SocksPolicy accept 172.16.0.0/12
+SocksPolicy accept 192.168.0.0/16
 SocksPolicy reject *
 
 ## Logs go to stdout at level "notice"
 Log notice stdout
 
-### password is emptyPassword
-#HashedControlPassword 16:2524B3CB20F7214A60CA6C95FD63482931A377626F4D12CCCCA8BF8141
 ControlPort 9051
 ControlListenAddress 0.0.0.0
 
