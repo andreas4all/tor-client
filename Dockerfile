@@ -1,6 +1,7 @@
 FROM alpine:edge
 
 ENV PASSWORD "emptyPassword"
+ENV NODES ""
 
 RUN apk update
 RUN apk upgrade

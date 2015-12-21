@@ -1,5 +1,4 @@
 # Docker TOR client
-=================
 
 [![](https://badge.imagelayers.io/andreas4all/tor-client:latest.svg)](https://imagelayers.io/?images=andreas4all/tor-client:latest 'Get your own badge on imagelayers.io')
 
@@ -11,7 +10,9 @@ We using two ports - 9050 and 9051.
 
 ## How to run?
 
-  docker run -p 9050:9050 -p 9051:9051 -e PASSWORD=yourPassword --name tor_client andreas4all/tor-client:latest
+```
+docker run -p 9050:9050 -p 9051:9051 -e PASSWORD=yourPassword --name tor_client andreas4all/tor-client:latest
+```
 
 Environment PASSWORD is for control TOR client. Default is _emptyPassword_.
 
@@ -19,11 +20,23 @@ Environment PASSWORD is for control TOR client. Default is _emptyPassword_.
 
 You can test it with curl:
 
-  curl --socks5-hostname localhost:9050 https://api.ipify.org?format=json
+```
+curl --socks5-hostname localhost:9050 https://api.ipify.org?format=json
+```
 
 If you use docker-machine hostname is from your machine, for example
 
-  curl --socks5-hostname 192.168.99.100:9050 https://api.ipify.org?format=json
+```
+curl --socks5-hostname 192.168.99.100:9050 https://api.ipify.org?format=json
+```
+
+## Select exit nodes
+
+When you run docker container with _NODES_ you can customize TOR exit nodes. Nodes is in format _{de},{fr}_
+
+```
+docker run -p 9050:9050 -p 9051:9051 -e PASSWORD=yourPassword -e NODES={de},{fr} --name tor_client andreas4all/tor-client:latest
+```
 
 ## How to customize?
 
