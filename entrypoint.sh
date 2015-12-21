@@ -4,7 +4,7 @@ if [ -e userpoint.sh ]; then
   /bin/sh userpoint.sh
 fi
 
-if [ ! -z $NODES]; then
+if [ ! -z "$NODES" ]; then
   echo "StrictExitNodes 1" >> /tmp/torrc
   echo "ExitNodes $NODES" >> /tmp/torrc
 fi
