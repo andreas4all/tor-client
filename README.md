@@ -32,10 +32,10 @@ curl --socks5-hostname 192.168.99.100:9050 https://api.ipify.org?format=json
 
 ## Select exit nodes
 
-When you run docker container with _NODES_ you can customize TOR exit nodes. Nodes is in format _{de},{fr}_
+When you run docker container with _EXIT_NODES_ you can customize TOR exit nodes. Nodes is in format _{de},{fr}_
 
 ```
-docker run -p 9050:9050 -p 9051:9051 -e PASSWORD=yourPassword -e NODES={de},{fr} --name tor_client andreas4all/tor-client:latest
+docker run -p 9050:9050 -p 9051:9051 -e PASSWORD=yourPassword -e EXIT_NODES={de},{fr} --name tor_client andreas4all/tor-client:latest
 ```
 
 ## How to customize?

@@ -1,7 +1,7 @@
 FROM alpine:edge
 
 ENV PASSWORD "emptyPassword"
-ENV NODES ""
+ENV EXIT_NODES ""
 
 RUN apk update
 RUN apk upgrade
@@ -12,6 +12,7 @@ EXPOSE 9050 9051
 RUN rm /var/cache/apk/*
 ADD ./entrypoint.sh /entrypoint.sh
 ADD ./torrc /tmp/torrc
+
 RUN chmod a+w /tmp/torrc
 USER tor
 CMD /entrypoint.sh
