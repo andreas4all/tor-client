@@ -4,6 +4,9 @@ DataDirectory /var/lib/tor
 ## Tor opens a socks proxy on port 9050
 SocksPort 0.0.0.0:9050
 
+## Tor opens a control port on 9051
+ControlPort 0.0.0.0:9051
+
 ## Entry policies to allow/deny SOCKS requests based on IP address.
 SocksPolicy accept 10.0.0.0/8
 SocksPolicy accept 172.16.0.0/12
@@ -12,9 +15,6 @@ SocksPolicy reject *
 
 ## Logs go to stdout at level "notice"
 Log notice stdout
-
-ControlPort 9051
-ControlListenAddress 0.0.0.0
 
 # Try for at most NUM seconds when building circuits. If the circuit isn't open in that time, give up on it. (Default: 1 minute.)
 CircuitBuildTimeout 5
